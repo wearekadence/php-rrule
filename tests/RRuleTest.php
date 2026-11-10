@@ -3120,7 +3120,6 @@ class RRuleTest extends TestCase
 
 		$reflector = new ReflectionClass('RRule\RRule');
 		$method = $reflector->getMethod('i18nFilesToLoad');
-		$method->setAccessible(true);
 
 		if (! $files) {
 			try {
@@ -3141,7 +3140,6 @@ class RRuleTest extends TestCase
 	{
 		$reflector = new ReflectionClass('RRule\RRule');
 		$method = $reflector->getMethod('i18nFilesToLoad');
-		$method->setAccessible(true);
 
 		if (! $files) {
 			try {
@@ -3180,7 +3178,6 @@ class RRuleTest extends TestCase
 
 		$reflector = new ReflectionClass('RRule\RRule');
 		$method = $reflector->getMethod('i18nLoad');
-		$method->setAccessible(true);
 
 		$result = $method->invokeArgs(null, array($locale, null, true));
 		$this->assertNotEmpty($result);
@@ -3196,7 +3193,6 @@ class RRuleTest extends TestCase
 		$reflector = new ReflectionClass('RRule\RRule');
 
 		$method = $reflector->getMethod('i18nLoad');
-		$method->setAccessible(true);
 
 		$result = $method->invokeArgs(null, array('xx', $fallback));
 		$this->assertNotEmpty($result);
@@ -3211,7 +3207,6 @@ class RRuleTest extends TestCase
 		$reflector = new ReflectionClass('RRule\RRule');
 
 		$method = $reflector->getMethod('i18nLoad');
-		$method->setAccessible(true);
 		$method->invokeArgs(null, array('invalid', 'en', false)); // even with a valid fallback it should fail
 	}
 
@@ -3224,7 +3219,6 @@ class RRuleTest extends TestCase
 		$reflector = new ReflectionClass('RRule\RRule');
 
 		$method = $reflector->getMethod('i18nLoad');
-		$method->setAccessible(true);
 		$method->invokeArgs(null, array('xx', 'invalid', false));
 	}
 

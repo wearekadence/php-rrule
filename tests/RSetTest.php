@@ -512,7 +512,6 @@ class RSetTest extends TestCase
 
 		$r = new ReflectionObject($rset);
 		$cache = $r->getProperty('cache');
-		$cache->setAccessible('true');
 		$this->assertNotEmpty($cache->getValue($rset), 'Cache is not empty');
 
 		$rset->addExRule(array(
@@ -553,7 +552,6 @@ class RSetTest extends TestCase
 
 		$r = new ReflectionObject($rset);
 		$cache = $r->getProperty('cache');
-		$cache->setAccessible('true');
 		$this->assertNotEmpty($cache->getValue($rset), 'Cache is not empty (partially filled)');
 
 		$this->assertEquals(date_create('1997-09-02 09:00'), $rset[0], 'Partial cache is returned');
